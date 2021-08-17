@@ -2,6 +2,8 @@ body {
   /* feel free to change height */
   height: 5000px;
   background: linear-gradient(to bottom, orange, darkblue);
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -18,11 +20,55 @@ h1 {
   text-shadow: 1px 1px 1px #333;
 }
 
-.star-svg {
+.road-svg {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
+  top: 132px;
+  left: 778px;
+  width: 528px;
+  height: 555.5px;
+}
+
+.marker-svg {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  fill: #d81b60;
+  cursor: pointer;
+}
+
+#penn {
+  top: 550px;
+  left: 875px;
+}
+
+.octagon {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: fixed;
+
+  top: 200px;
+  left: 200px;
+}
+.octagon:before {
+  content: '';
+  width: 100px;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 29px solid red;
+  border-left: 29px solid #eee;
+  border-right: 29px solid #eee;
+}
+.octagon:after {
+  content: '';
+  width: 100px;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 29px solid red;
+  border-left: 29px solid #eee;
+  border-right: 29px solid #eee;
 }

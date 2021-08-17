@@ -1,23 +1,7 @@
 $(document).ready(function () {
-  /* Canvas */
-  var canvas = document.getElementById('main-map');
-  var ctx = canvas.getContext('2d');
-
-  canvas.width = window.screen.width;
-  canvas.height = window.screen.height;
-  console.log(window.screen.width, ' x ', window.screen.height);
-
-  var background = new Image();
-  background.src = 'public/img/big_map.png';
-
-  // Make sure the image is loaded first otherwise nothing will draw.
-  background.onload = function () {
-    ctx.drawImage(background, 0, 0);
-  };
-
-  /* SVG Path */
   // Get a reference to the <path>
-  var path = $('.road-path').get(1);
+  var path = $('.star-path').get(0);
+  // var path = document.querySelector('#star-path');
   console.log('path', path);
 
   // Get length of path... ~577px in this case
@@ -43,10 +27,6 @@ $(document).ready(function () {
       (document.documentElement.scrollHeight -
         document.documentElement.clientHeight);
 
-    console.log('scrollPercentage', scrollPercentage);
-    if (scrollPercentage == 0.13683716851408523) {
-      console.log('Reached Philidelphia');
-    }
     // Length to offset the dashes
     var drawLength = pathLength * scrollPercentage;
 
@@ -60,11 +40,5 @@ $(document).ready(function () {
     } else {
       path.style.strokeDasharray = pathLength + ' ' + pathLength;
     }
-  });
-
-  /* Checkpoints */
-  // Pressing to determine coordinate locations
-  window.addEventListener('click', (e) => {
-    console.log(e.clientX, e.clientY);
   });
 });
